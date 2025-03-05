@@ -47,7 +47,7 @@
     state))
 
 (defun interpret-instruction (op state)
-  (if (consp op)
+  (if (listp op)
       (interpret-loop op state)
       (case op
         (add (incf (elt (state-buffer state) (state-head state))))
